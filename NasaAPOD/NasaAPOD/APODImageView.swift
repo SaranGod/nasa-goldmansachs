@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AVKit
+import WebKit
 
 struct APODImageView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -80,7 +81,8 @@ struct APODImageView: View {
                         }
                         else{
                             if URL(string: self.apodImage?.url ?? "") != nil {
-                                VideoPlayer(player: AVPlayer(url: URL(string: self.apodImage?.url ?? "")!))
+                                WebView(request: URLRequest(url: URL(string: self.apodImage?.url ?? "")!))
+                                    .frame(width: 300, height: 300)
                             }
                         }
                         Text("\(self.apodImage?.explanation ?? "")").font(.body).multilineTextAlignment(.leading)
@@ -176,3 +178,18 @@ struct ActivityIndicator: UIViewRepresentable {
         isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
     }
 }
+
+struct WebView : UIViewRepresentable {
+    
+    let request: URLRequest
+    
+    func makeUIView(context: Context) -> WKWebView  {
+        return WKWebView()
+    }
+    
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        uiView.load(request)
+    }
+    
+}
+
