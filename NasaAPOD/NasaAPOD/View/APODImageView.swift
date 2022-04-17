@@ -49,23 +49,6 @@ struct APODImageView: View {
                             }
                         }
                         if self.apodImage?.media_type == "image"{
-//                            AsyncImage(url: URL(string: self.apodImage?.url ?? "")){phase in
-//                                switch phase {
-//                                case .empty:
-//                                    VStack{
-//                                        ActivityIndicator(isAnimating: .constant(true), style: .medium)
-//                                        Text("Downloading Image")
-//                                    }
-//                                case .success(let image):
-//                                    image
-//                                        .resizable()
-//                                        .scaledToFit()
-//                                case .failure(_):
-//                                    Text("Unable to download the image. Please try again later!")
-//                                @unknown default:
-//                                    Text("Unable to download the image. Please try again later!")
-//                                }
-//                            }
                             if !((self.apodImage?.url ?? "").isEmpty){
                                 Image(uiImage: UIImage(data: Data(base64Encoded: self.apodImage?.url ?? "") ?? Data(base64Encoded: "")!)!)
                                     .resizable()
@@ -76,7 +59,6 @@ struct APODImageView: View {
                                 Image(systemName: "exclamationmark.icloud.fill")
                                     .frame(width: 300, height: 300)
                             }
-    //                        .padding(.horizontal)
 
                         }
                         else{
@@ -131,13 +113,10 @@ struct APODImageView: View {
         withAnimation {
             items.filter({$0.date == self.dateToSearch}).forEach({$0.isFavourite = !self.isFavourite})
             self.isFavourite = !isFavourite
-//            newItem.timestamp = Date()
-
+            
             do {
                 try viewContext.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
