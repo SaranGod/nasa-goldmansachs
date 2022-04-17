@@ -65,16 +65,10 @@
 		709CE5D5280927FB00C15DB0 /* NasaAPOD */ = {
 			isa = PBXGroup;
 			children = (
-				709CE5D6280927FB00C15DB0 /* NasaAPODApp.swift */,
-				709CE5D8280927FB00C15DB0 /* ContentView.swift */,
-				709CE5F1280B4BCA00C15DB0 /* FavouriteImages.swift */,
-				709CE5ED2809DAD600C15DB0 /* APODImageView.swift */,
-				709CE5EF280B325F00C15DB0 /* APODImageByDate.swift */,
-				709CE5E92809D12D00C15DB0 /* NetworkCalls.swift */,
-				709CE5EB2809D37900C15DB0 /* APODResponse.swift */,
+				709CE5F3280C2D3D00C15DB0 /* View */,
+				709CE5F4280C2D5D00C15DB0 /* Model */,
+				709CE5F5280C2D7200C15DB0 /* Controller */,
 				709CE5DA280927FD00C15DB0 /* Assets.xcassets */,
-				709CE5DF280927FD00C15DB0 /* Persistence.swift */,
-				709CE5E1280927FD00C15DB0 /* NasaAPOD.xcdatamodeld */,
 				709CE5DC280927FD00C15DB0 /* Preview Content */,
 			);
 			path = NasaAPOD;
@@ -86,6 +80,36 @@
 				709CE5DD280927FD00C15DB0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		709CE5F3280C2D3D00C15DB0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				709CE5D8280927FB00C15DB0 /* ContentView.swift */,
+				709CE5F1280B4BCA00C15DB0 /* FavouriteImages.swift */,
+				709CE5ED2809DAD600C15DB0 /* APODImageView.swift */,
+				709CE5EF280B325F00C15DB0 /* APODImageByDate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		709CE5F4280C2D5D00C15DB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				709CE5EB2809D37900C15DB0 /* APODResponse.swift */,
+				709CE5E1280927FD00C15DB0 /* NasaAPOD.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		709CE5F5280C2D7200C15DB0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				709CE5DF280927FD00C15DB0 /* Persistence.swift */,
+				709CE5D6280927FB00C15DB0 /* NasaAPODApp.swift */,
+				709CE5E92809D12D00C15DB0 /* NetworkCalls.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
