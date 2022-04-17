@@ -12,20 +12,35 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [],
         animation: .default)
-    private var items: FetchedResults<Item>
+    private var items: FetchedResults<NasaApodImage>
+    
+    @State var dateString = ""
     
     var body: some View {
         NavigationView{
             List{
-                NavigationLink(destination: APODImageView()){
+                NavigationLink(destination: APODImageView(dateToSearch: self.dateString)
+                                .environment(\.managedObjectContext, viewContext)){
                     Text("Get Today's Image")
                 }
-                NavigationLink(destination: EmptyView()){
+                NavigationLink(destination: APODImageByDate()
+                                .environment(\.managedObjectContext, viewContext)){
                     Text("Search Image By Date")
                 }
+                NavigationLink(destination: FavouriteImages()
+                                .environment(\.managedObjectContext, viewContext)){
+                    Text("Favourites")
+                }
             }
+            .navigationTitle("Pic of the day by NASA")
+            .navigationBarTitleDisplayMode(.large)
+        }
+        .onAppear {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            self.dateString = dateFormatter.string(from: Date())
         }
     }
 
@@ -57,8 +72,8 @@ struct ContentView: View {
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newItem = NasaApodImage(context: viewContext)
+//            newItem.timestamp = Date()
 
             do {
                 try viewContext.save()
@@ -71,28 +86,8 @@ struct ContentView: View {
         }
     }
 
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
+    
 }
-
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

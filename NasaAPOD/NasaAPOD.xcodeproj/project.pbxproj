@@ -16,6 +16,8 @@
 		709CE5EA2809D12D00C15DB0 /* NetworkCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709CE5E92809D12D00C15DB0 /* NetworkCalls.swift */; };
 		709CE5EC2809D37900C15DB0 /* APODResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709CE5EB2809D37900C15DB0 /* APODResponse.swift */; };
 		709CE5EE2809DAD600C15DB0 /* APODImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709CE5ED2809DAD600C15DB0 /* APODImageView.swift */; };
+		709CE5F0280B325F00C15DB0 /* APODImageByDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709CE5EF280B325F00C15DB0 /* APODImageByDate.swift */; };
+		709CE5F2280B4BCA00C15DB0 /* FavouriteImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709CE5F1280B4BCA00C15DB0 /* FavouriteImages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		709CE5E92809D12D00C15DB0 /* NetworkCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCalls.swift; sourceTree = "<group>"; };
 		709CE5EB2809D37900C15DB0 /* APODResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODResponse.swift; sourceTree = "<group>"; };
 		709CE5ED2809DAD600C15DB0 /* APODImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODImageView.swift; sourceTree = "<group>"; };
+		709CE5EF280B325F00C15DB0 /* APODImageByDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODImageByDate.swift; sourceTree = "<group>"; };
+		709CE5F1280B4BCA00C15DB0 /* FavouriteImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteImages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +67,9 @@
 			children = (
 				709CE5D6280927FB00C15DB0 /* NasaAPODApp.swift */,
 				709CE5D8280927FB00C15DB0 /* ContentView.swift */,
+				709CE5F1280B4BCA00C15DB0 /* FavouriteImages.swift */,
 				709CE5ED2809DAD600C15DB0 /* APODImageView.swift */,
+				709CE5EF280B325F00C15DB0 /* APODImageByDate.swift */,
 				709CE5E92809D12D00C15DB0 /* NetworkCalls.swift */,
 				709CE5EB2809D37900C15DB0 /* APODResponse.swift */,
 				709CE5DA280927FD00C15DB0 /* Assets.xcassets */,
@@ -152,11 +158,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				709CE5F0280B325F00C15DB0 /* APODImageByDate.swift in Sources */,
 				709CE5E3280927FD00C15DB0 /* NasaAPOD.xcdatamodeld in Sources */,
 				709CE5EE2809DAD600C15DB0 /* APODImageView.swift in Sources */,
 				709CE5E0280927FD00C15DB0 /* Persistence.swift in Sources */,
 				709CE5EC2809D37900C15DB0 /* APODResponse.swift in Sources */,
 				709CE5D9280927FB00C15DB0 /* ContentView.swift in Sources */,
+				709CE5F2280B4BCA00C15DB0 /* FavouriteImages.swift in Sources */,
 				709CE5D7280927FB00C15DB0 /* NasaAPODApp.swift in Sources */,
 				709CE5EA2809D12D00C15DB0 /* NetworkCalls.swift in Sources */,
 			);
