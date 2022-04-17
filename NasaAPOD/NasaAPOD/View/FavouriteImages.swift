@@ -24,7 +24,7 @@ struct FavouriteImages: View {
                     APODImageView(dateToSearch: item.date ?? "")
                         .environment(\.managedObjectContext, viewContext)
                 } label: {
-                    Text(item.date ?? "")
+                    Text(item.title ?? "")
                 }
             }
             .onDelete(perform: deleteItems)
